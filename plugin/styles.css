@@ -1,0 +1,633 @@
+/* ═══════════════════════════════════════════════════════════════
+   Bible Semantic Workspace – Obsidian Plugin Styles
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── Root ── */
+.bsw-root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  font-family: var(--font-text);
+  color: var(--text-normal);
+}
+
+/* ── Toolbar ── */
+.bsw-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-bottom: 1px solid var(--background-modifier-border);
+  background: var(--background-secondary);
+  flex-shrink: 0;
+}
+
+.bsw-dataset-select {
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid var(--background-modifier-border);
+  background: var(--background-primary);
+  color: var(--text-normal);
+  font-size: 13px;
+}
+
+.bsw-mode-group {
+  display: flex;
+  gap: 2px;
+  margin-left: auto;
+}
+
+.bsw-mode-btn {
+  padding: 4px 10px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 4px;
+  background: var(--background-primary);
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 12px;
+  transition: all 0.15s ease;
+}
+
+.bsw-mode-btn:hover {
+  color: var(--text-normal);
+  background: var(--background-modifier-hover);
+}
+
+.bsw-mode-active {
+  background: var(--interactive-accent);
+  color: var(--text-on-accent);
+  border-color: var(--interactive-accent);
+}
+
+.bsw-close-panel-btn {
+  padding: 4px 10px;
+  border-radius: 4px;
+  border: 1px solid var(--background-modifier-border);
+  background: var(--background-primary);
+  cursor: pointer;
+  font-size: 12px;
+}
+
+/* ── Layout ── */
+.bsw-layout {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* ── Panels ── */
+.bsw-panel {
+  width: 320px;
+  min-width: 280px;
+  max-width: 400px;
+  border-right: 1px solid var(--background-modifier-border);
+  background: var(--background-secondary);
+  overflow-y: auto;
+  flex-shrink: 0;
+}
+
+.bsw-panel-left {
+  border-right: 1px solid var(--background-modifier-border);
+  border-left: none;
+}
+
+.bsw-panel-right {
+  border-left: 1px solid var(--background-modifier-border);
+  border-right: none;
+}
+
+.bsw-panel-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  padding: 6px;
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.bsw-panel-tab {
+  padding: 4px 8px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 4px;
+  background: var(--background-primary);
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 11px;
+  transition: all 0.15s ease;
+}
+
+.bsw-panel-tab:hover {
+  color: var(--text-normal);
+}
+
+.bsw-panel-tab-active {
+  background: var(--interactive-accent);
+  color: var(--text-on-accent);
+  border-color: var(--interactive-accent);
+}
+
+.bsw-panel-content {
+  padding: 12px;
+}
+
+.bsw-panel-content h4 {
+  margin: 0 0 8px 0;
+  font-size: 15px;
+  color: var(--text-normal);
+}
+
+.bsw-panel-content h5 {
+  margin: 12px 0 6px 0;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.bsw-panel-hint {
+  color: var(--text-faint);
+  font-size: 13px;
+  font-style: italic;
+}
+
+/* ── Scripture Pane ── */
+.bsw-scripture-pane {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px 32px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.bsw-chapter-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0 0 20px 0;
+  color: var(--text-normal);
+  border-bottom: 2px solid var(--interactive-accent);
+  padding-bottom: 8px;
+}
+
+/* ── Paragraphs ── */
+.bsw-paragraph {
+  margin-bottom: 20px;
+  line-height: 1.8;
+}
+
+/* ── Verses ── */
+.bsw-verse {
+  display: inline;
+  position: relative;
+  cursor: pointer;
+  padding: 1px 2px;
+  border-radius: 2px;
+  transition: background-color 0.15s ease;
+}
+
+.bsw-verse:hover {
+  background-color: var(--background-modifier-hover);
+}
+
+.bsw-verse-selected {
+  background-color: var(--background-modifier-active-hover);
+  outline: 1px solid var(--interactive-accent);
+  outline-offset: 1px;
+}
+
+.bsw-verse-content {
+  display: inline;
+}
+
+.bsw-verse-num {
+  font-size: 10px;
+  color: var(--text-faint);
+  margin-right: 2px;
+  font-weight: 600;
+  vertical-align: super;
+  user-select: none;
+}
+
+.bsw-text-clean {
+  color: var(--text-normal);
+}
+
+.bsw-text-annotated {
+  color: var(--text-normal);
+  transition: border-bottom 0.15s ease;
+}
+
+/* ── Inline Controls ── */
+.bsw-inline-controls {
+  display: none;
+  position: absolute;
+  top: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  gap: 2px;
+  background: var(--background-primary);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 6px;
+  padding: 2px 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  white-space: nowrap;
+}
+
+.bsw-verse:hover .bsw-inline-controls,
+.bsw-verse-selected .bsw-inline-controls {
+  display: flex;
+}
+
+.bsw-ctrl-btn {
+  width: 22px;
+  height: 22px;
+  border: none;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.1s ease;
+  padding: 0;
+}
+
+.bsw-ctrl-btn:hover {
+  background: var(--background-modifier-hover);
+  color: var(--text-normal);
+}
+
+.bsw-ctrl-left:hover {
+  color: var(--interactive-accent);
+}
+
+.bsw-ctrl-right:hover {
+  color: var(--interactive-accent);
+}
+
+.bsw-ctrl-sem-active {
+  color: var(--interactive-accent);
+}
+
+/* ── Badge ── */
+.bsw-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 16px;
+  height: 16px;
+  border-radius: 8px;
+  background: var(--interactive-accent);
+  color: var(--text-on-accent);
+  font-size: 10px;
+  font-weight: 600;
+  padding: 0 4px;
+  margin-left: 4px;
+  vertical-align: super;
+  user-select: none;
+}
+
+/* ── Annotation Chips (Deep Mode) ── */
+.bsw-chip-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+.bsw-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  border-width: 1px;
+  font-size: 11px;
+  cursor: default;
+  line-height: 1.4;
+}
+
+.bsw-chip-icon {
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+.bsw-chip-entity {
+  font-weight: 500;
+}
+
+.bsw-chip-class {
+  color: var(--text-muted);
+  font-size: 10px;
+}
+
+.bsw-chip-confidence {
+  color: var(--text-faint);
+  font-size: 10px;
+}
+
+/* ── Lexicon Table ── */
+.bsw-lexicon-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.bsw-lexicon-table td {
+  padding: 4px 8px;
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.bsw-lex-label {
+  font-weight: 600;
+  color: var(--text-muted);
+  width: 100px;
+}
+
+.bsw-lex-value {
+  color: var(--text-normal);
+  word-break: break-word;
+}
+
+.bsw-lex-annotation {
+  padding: 6px 0;
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.bsw-lex-note {
+  color: var(--text-muted);
+  font-size: 12px;
+  margin: 2px 0 0 0;
+}
+
+/* ── People/Places/Things ── */
+.bsw-ppt-item {
+  padding: 6px 8px;
+  margin: 4px 0;
+  border-radius: 4px;
+  background: var(--background-primary);
+  font-size: 13px;
+}
+
+.bsw-confidence {
+  color: var(--text-faint);
+  font-size: 11px;
+}
+
+/* ── Timeline ── */
+.bsw-timeline-item {
+  padding: 6px 8px;
+  margin: 4px 0;
+  border-left: 3px solid var(--interactive-accent);
+  background: var(--background-primary);
+  border-radius: 0 4px 4px 0;
+}
+
+/* ── Cross-References ── */
+.bsw-crossref-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.bsw-crossref-item {
+  padding: 6px 0;
+  border-bottom: 1px solid var(--background-modifier-border);
+  font-size: 13px;
+}
+
+.bsw-crossref-note {
+  color: var(--text-muted);
+  font-size: 12px;
+  margin: 2px 0 0 0;
+}
+
+/* ── Theme Items ── */
+.bsw-theme-item {
+  padding: 6px 8px;
+  margin: 4px 0;
+  border-left: 3px solid #9b59b6;
+  background: var(--background-primary);
+  border-radius: 0 4px 4px 0;
+}
+
+.bsw-theme-codes {
+  color: var(--text-faint);
+  font-size: 11px;
+}
+
+/* ── Claim/Evidence ── */
+.bsw-claim-item,
+.bsw-evidence-item {
+  padding: 6px 8px;
+  margin: 4px 0;
+  background: var(--background-primary);
+  border-radius: 4px;
+  font-size: 13px;
+}
+
+/* ── Chat ── */
+.bsw-chat-area {
+  margin-top: 12px;
+}
+
+.bsw-chat-messages {
+  min-height: 100px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 4px;
+  padding: 8px;
+  margin-bottom: 8px;
+  background: var(--background-primary);
+}
+
+.bsw-chat-input-row {
+  display: flex;
+  gap: 4px;
+}
+
+.bsw-chat-input {
+  flex: 1;
+  padding: 6px 8px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 4px;
+  background: var(--background-primary);
+  color: var(--text-normal);
+}
+
+.bsw-chat-send {
+  padding: 6px 12px;
+  border-radius: 4px;
+  border: 1px solid var(--background-modifier-border);
+  background: var(--interactive-accent);
+  color: var(--text-on-accent);
+  cursor: pointer;
+}
+
+/* ── Writing Pad ── */
+.bsw-writing-context {
+  color: var(--text-muted);
+  font-size: 12px;
+  font-style: italic;
+  margin-bottom: 8px;
+}
+
+.bsw-writing-textarea,
+.bsw-notes-textarea {
+  width: 100%;
+  min-height: 150px;
+  padding: 8px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 4px;
+  background: var(--background-primary);
+  color: var(--text-normal);
+  font-family: var(--font-text);
+  font-size: 14px;
+  resize: vertical;
+}
+
+.bsw-writing-btn-row {
+  margin-top: 8px;
+  display: flex;
+  gap: 6px;
+}
+
+/* ── Buttons ── */
+.bsw-btn {
+  padding: 6px 14px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 4px;
+  background: var(--background-primary);
+  color: var(--text-normal);
+  cursor: pointer;
+  font-size: 13px;
+  transition: all 0.15s ease;
+}
+
+.bsw-btn:hover {
+  background: var(--background-modifier-hover);
+}
+
+.bsw-btn-primary {
+  background: var(--interactive-accent);
+  color: var(--text-on-accent);
+  border-color: var(--interactive-accent);
+}
+
+.bsw-btn-primary:hover {
+  opacity: 0.9;
+}
+
+/* ── Inputs ── */
+.bsw-input {
+  width: 100%;
+  padding: 6px 8px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 4px;
+  background: var(--background-primary);
+  color: var(--text-normal);
+  font-size: 13px;
+  margin-bottom: 6px;
+  box-sizing: border-box;
+}
+
+/* ── Co-Partner Session ── */
+.bsw-copartner-form label {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  margin: 8px 0 4px 0;
+  color: var(--text-muted);
+}
+
+.bsw-session-section {
+  margin: 12px 0;
+  padding: 8px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 6px;
+}
+
+.bsw-hypothesis-item {
+  padding: 6px 8px;
+  margin: 4px 0;
+  background: var(--background-primary);
+  border-radius: 4px;
+  border-left: 3px solid var(--interactive-accent);
+}
+
+.bsw-hypothesis-item p {
+  margin: 2px 0;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* ── Analysis Output ── */
+.bsw-analysis-block {
+  background: var(--background-primary);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 4px;
+  padding: 8px;
+  font-size: 12px;
+  white-space: pre-wrap;
+  margin: 6px 0;
+  color: var(--text-muted);
+}
+
+.bsw-json-output {
+  background: var(--background-primary);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 4px;
+  padding: 8px;
+  font-size: 11px;
+  white-space: pre-wrap;
+  max-height: 300px;
+  overflow-y: auto;
+  color: var(--text-normal);
+  font-family: var(--font-monospace);
+}
+
+/* ── Notes Context ── */
+.bsw-notes-context {
+  color: var(--text-faint);
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
+.bsw-note-item {
+  padding: 6px 0;
+  border-bottom: 1px solid var(--background-modifier-border);
+  font-size: 13px;
+}
+
+/* ── Export Buttons ── */
+.bsw-panel-content .bsw-btn {
+  display: block;
+  width: 100%;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+/* ── Accessibility: never rely on color alone ── */
+.bsw-chip[title]::after {
+  content: "";
+}
+
+/* Ensure keyboard focus visible */
+.bsw-ctrl-btn:focus-visible,
+.bsw-mode-btn:focus-visible,
+.bsw-panel-tab:focus-visible,
+.bsw-btn:focus-visible {
+  outline: 2px solid var(--interactive-accent);
+  outline-offset: 2px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .bsw-panel {
+    width: 260px;
+    min-width: 240px;
+  }
+
+  .bsw-scripture-pane {
+    padding: 16px;
+  }
+}
