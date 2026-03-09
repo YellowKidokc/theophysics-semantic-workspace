@@ -1,14 +1,14 @@
-# Editor                                                                                                                                                                              │ │
-.idea/                                                                                                                                                                                │ │
-.vscode/                                                                                                                                                                              │ │
+# Editor
+.idea/
+.vscode/
 
-# Build                                                                                                                                                                               │ │
-node_modules/                                                                                                                                                                         │ │
-dist/                                                                                                                                                                                 │ │
+# Build
+node_modules/
+dist/
 *.log
 
 # CLAUDE settings
 .claude/settings.local.json
 
-# macOS                                                                                                                                                                               │ │
+# macOS
 .DS_Store
