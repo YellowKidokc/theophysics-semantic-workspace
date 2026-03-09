@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SemanticWorkspaceEnums",
+  "description": "Canonical enums for Bible-first semantic workspace with cross-domain portability.",
+  "scope_levels": [
+    "word",
+    "sentence",
+    "paragraph",
+    "verse",
+    "chapter",
+    "book",
+    "corpus"
+  ],
+  "reader_modes": [
+    "reading",
+    "overlay",
+    "deep"
+  ],
+  "class_code": [
+    "axiom",
+    "tag",
+    "definition",
+    "theme",
+    "person",
+    "place",
+    "object",
+    "event",
+    "timeline",
+    "crossref",
+    "concept",
+    "claim",
+    "source",
+    "law",
+    "equation",
+    "evidence"
+  ],
+  "role_code": [
+    "source",
+    "claim",
+    "bridge",
+    "warning",
+    "unresolved",
+    "definition",
+    "action",
+    "relation",
+    "cause",
+    "effect",
+    "constraint",
+    "exception",
+    "direct_mapping"
+  ],
+  "link_type": [
+    "claim",
+    "evidence",
+    "source",
+    "note",
+    "definition",
+    "crossref",
+    "action",
+    "map"
+  ],
+  "evidence_status": [
+    "asserted",
+    "provisional",
+    "verified",
+    "disputed",
+    "unresolved"
+  ],
+  "record_status": [
+    "verified",
+    "provisional",
+    "unverified"
+  ],
+  "time_scope": [
+    "timeless",
+    "historical",
+    "sequence_point",
+    "duration",
+    "prophetic",
+    "projected"
+  ],
+  "ops_status": [
+    "needs_source",
+    "needs_review",
+    "canonical",
+    "publish_ready",
+    "deprecated",
+    "blocked"
+  ],
+  "context_domain": [
+    "bible",
+    "theology",
+    "physics",
+    "law",
+    "general"
+  ],
+  "provenance_method": [
+    "manual",
+    "ai",
+    "import"
+  ]
+}

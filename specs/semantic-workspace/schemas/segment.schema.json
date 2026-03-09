@@ -1,0 +1,116 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://theophysics.pro/schemas/semantic-workspace/segment.schema.json",
+  "title": "Segment",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "segment_uuid",
+    "level",
+    "content",
+    "index_in_parent"
+  ],
+  "properties": {
+    "segment_uuid": {
+      "type": "string",
+      "minLength": 3
+    },
+    "level": {
+      "type": "string",
+      "enum": [
+        "word",
+        "sentence",
+        "paragraph",
+        "verse",
+        "chapter",
+        "book",
+        "corpus"
+      ]
+    },
+    "parent_uuid": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "content": {
+      "type": "string"
+    },
+    "index_in_parent": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "testament_uuid": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "book_uuid": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "chapter_uuid": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "verse_uuid": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "paragraph_uuid": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "sentence_uuid": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "word_uuid": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "surface_text": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "lemma": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "strongs": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "pos": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "lang": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  }
+}

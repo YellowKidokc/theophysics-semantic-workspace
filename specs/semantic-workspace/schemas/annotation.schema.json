@@ -1,0 +1,227 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://theophysics.pro/schemas/semantic-workspace/annotation.schema.json",
+  "title": "Annotation",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "annotation_uuid",
+    "segment_uuid",
+    "entity",
+    "role",
+    "evidence_status"
+  ],
+  "properties": {
+    "annotation_uuid": {
+      "type": "string",
+      "minLength": 3
+    },
+    "segment_uuid": {
+      "type": "string",
+      "minLength": 3
+    },
+    "entity": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": [
+          "person",
+          "place",
+          "object",
+          "concept",
+          "event",
+          "claim",
+          "source",
+          "law",
+          "equation"
+        ]
+      }
+    },
+    "role": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": [
+          "definition",
+          "action",
+          "relation",
+          "cause",
+          "effect",
+          "constraint",
+          "exception",
+          "bridge",
+          "direct_mapping",
+          "warning",
+          "unresolved"
+        ]
+      }
+    },
+    "evidence_status": {
+      "type": "string",
+      "enum": [
+        "asserted",
+        "provisional",
+        "verified",
+        "disputed",
+        "unresolved"
+      ]
+    },
+    "time_scope": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": [
+          "timeless",
+          "historical",
+          "sequence_point",
+          "duration",
+          "prophetic",
+          "projected"
+        ]
+      },
+      "default": []
+    },
+    "ops_status": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": [
+          "needs_source",
+          "needs_review",
+          "canonical",
+          "publish_ready",
+          "deprecated",
+          "blocked"
+        ]
+      },
+      "default": []
+    },
+    "context": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "domain": {
+          "type": "string",
+          "enum": [
+            "bible",
+            "theology",
+            "physics",
+            "law",
+            "general"
+          ]
+        },
+        "tradition_or_framework": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "audience": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "language_register": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "method"
+      ],
+      "properties": {
+        "author": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "method": {
+          "type": "string",
+          "enum": [
+            "manual",
+            "ai",
+            "import"
+          ]
+        },
+        "timestamp": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "source_path": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "revision": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "class_code": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": [
+          "axiom",
+          "tag",
+          "definition",
+          "theme",
+          "person",
+          "place",
+          "object",
+          "event",
+          "timeline",
+          "crossref",
+          "concept",
+          "claim",
+          "source",
+          "law",
+          "equation",
+          "evidence"
+        ]
+      },
+      "default": []
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "verified",
+        "provisional",
+        "unverified"
+      ]
+    },
+    "note": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  }
+}

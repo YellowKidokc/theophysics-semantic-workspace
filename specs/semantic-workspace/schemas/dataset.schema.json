@@ -1,0 +1,138 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://theophysics.pro/schemas/semantic-workspace/dataset.schema.json",
+  "title": "BibleSemanticDataset",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "dataset_id",
+    "domain",
+    "ingest_profile",
+    "segments",
+    "annotations",
+    "links"
+  ],
+  "properties": {
+    "dataset_id": {
+      "type": "string"
+    },
+    "domain": {
+      "type": "string",
+      "enum": [
+        "bible",
+        "theology",
+        "physics",
+        "law",
+        "general"
+      ]
+    },
+    "ingest_profile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "segmentation",
+        "enabled_levels"
+      ],
+      "properties": {
+        "segmentation": {
+          "type": "string",
+          "enum": [
+            "paragraph-first",
+            "sentence-first",
+            "verse-first"
+          ]
+        },
+        "enabled_levels": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "enum": [
+              "word",
+              "sentence",
+              "paragraph",
+              "verse",
+              "chapter",
+              "book",
+              "corpus"
+            ]
+          }
+        }
+      }
+    },
+    "segments": {
+      "type": "array",
+      "items": {
+        "$ref": "./segment.schema.json"
+      }
+    },
+    "annotations": {
+      "type": "array",
+      "items": {
+        "$ref": "./annotation.schema.json"
+      }
+    },
+    "links": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "link_uuid",
+          "from_segment_uuid",
+          "to_target_id",
+          "link_type"
+        ],
+        "properties": {
+          "link_uuid": {
+            "type": "string"
+          },
+          "from_segment_uuid": {
+            "type": "string"
+          },
+          "to_target_id": {
+            "type": "string"
+          },
+          "link_type": {
+            "type": "string",
+            "enum": [
+              "claim",
+              "evidence",
+              "source",
+              "note",
+              "definition",
+              "crossref",
+              "action",
+              "map"
+            ]
+          },
+          "weight": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "note": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      },
+      "default": []
+    },
+    "claims": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      },
+      "default": []
+    }
+  }
+}
