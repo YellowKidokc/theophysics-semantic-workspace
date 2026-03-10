@@ -1,0 +1,10 @@
+{
+  "id": "bible-semantic-workspace",
+  "name": "Bible Semantic Workspace",
+  "version": "0.1.0",
+  "minAppVersion": "1.4.0",
+  "description": "Bible-first research workspace with layered semantic analysis and writing tools.",
+  "author": "Theophysics",
+  "authorUrl": "https://theophysics.pro",
+  "isDesktopOnly": false
+}
